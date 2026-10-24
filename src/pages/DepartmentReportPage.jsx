@@ -17,8 +17,8 @@ import { useBacnetDashboard } from "@/hooks/useBacnetDashboard";
 import { summarizeMeters } from "@/services/bacnetService";
 import { Button } from "@/components/ui/button";
 import { Panel } from "@/components/dashboard/Panel";
-import DivisionMetrics from "@/components/division/DivisionMetrics";
 import LineChart from "@/components/chart/lineChart";
+import DepartmentFlowDiagram from "@/components/departmetn/DepartmentEnergyFlow";
 
 const UTILITY_OPTIONS = [
   { value: "all", label: "All utilities" },
@@ -912,7 +912,7 @@ const DepartmentReportPage = () => {
           <h2 className="text-base font-semibold">
             Combined electrical KPIs — selected report scope
           </h2>
-          <DivisionMetrics summary={summary} meters={scopedMeters} />
+          <DepartmentFlowDiagram meters={scopedMeters} />
           <p className="text-xs text-neutral-500">
             Power (kW), current (A), and kWh values are sums of available live
             meter readings. The kWh total is a sum of live register values, not
